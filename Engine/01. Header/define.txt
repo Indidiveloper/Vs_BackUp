@@ -1,0 +1,109 @@
+#pragma once
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+// 매크로를 사용할 때 주의할 점!!!
+
+//int Add(int a, int b)
+//{
+//	return a + b;
+//}
+//
+//#define ADD(a, b) a + b
+//
+//int test()
+//{
+//	int sum = 0;
+//	sum = 10 * Add(10, 20);
+//	// 위 코드는 아래와 같다.
+//	sum = 10 * 30;
+//
+//	sum = 10 * ADD(10, 20);
+//	// 위 코드는 아래와 같다.
+//	sum = 10 * 10 + 20;
+//	
+//	// 매크로를 함수 처럼 사용할 수 있지만, 함수와 동일 시 하여 사용하면 전혀 다른 결과가 나올 수 있으므로
+//	// 함수와 매크로를 구분해서 사용해야 하며, 매크로를 사용할 경우 이를 반드시 주의 해야한다.
+//
+//	return 0;
+//}
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+#define SINGLE(type) public:\
+						static type* GetInst()\
+						{\
+							static type mgr;\
+							 return &mgr;\
+						}\
+					private:\
+						type();\
+						~type();
+
+#define fDT CTimeMgr::GetInst()->GetfDT()
+#define DT CTimeMgr::GetInst()->GetDT()
+
+#define KEY_CHECK(key, state) CKeyMgr::GetInst()->GetKeyState(key) == state
+
+#define KEY_HOLD(key) KEY_CHECK(key, KEY_STATE::HOLD)
+#define KEY_TAP(key) KEY_CHECK(key, KEY_STATE::TAP)
+#define KEY_AWAY(key) KEY_CHECK(key, KEY_STATE::AWAY)
+#define KEY_NONE(key) KEY_CHECK(key, KEY_STATE::NONE)
+
+#define MOUSE_POS CKeyMgr::GetInst()->GetMousePos()
+
+#define PI 3.1415926535f
+
+#define CLONE(type) type* Clone() {return new type(*this); }
+
+enum class GROUP_TYPE
+{
+	DEFAULT,
+	PLAYER,
+	MONSTER,
+	PROJ_PLAYER,
+	PROJ_MONSTER,
+
+
+	END = 32,
+};
+
+enum class SCENE_TYPE
+{
+	TOOL,
+	START,
+	STAGE_01,
+	STAGE_02,
+
+
+	END,
+};
+
+enum class BRUSH_TYPE
+{
+	HOLLOW,
+
+	
+	END,
+};
+
+enum class PEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+
+
+	END,
+};
+
+enum class EVENT_TYPE
+{
+	CREATE_OBJECT,
+	DELETE_OBJECT,
+	SCENE_CHANGE,
+
+
+	END,
+};
+

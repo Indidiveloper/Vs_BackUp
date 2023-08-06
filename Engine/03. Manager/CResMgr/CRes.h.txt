@@ -1,0 +1,19 @@
+#pragma once
+
+
+class CRes;
+class CTexture;
+
+class CResMgr
+{
+	SINGLE(CResMgr);
+
+private:
+	map<wstring, CRes*> m_mapTex;		// map이 들고있는 요소 <wstring: 키 값, CTexture*: 텍스쳐 객체 주소>
+
+public:
+	CTexture* LoadTexture(const wstring& _strKey, const wstring& _strRelativePath);
+	CTexture* FindTexture(const wstring& _strKey);
+
+};
+
