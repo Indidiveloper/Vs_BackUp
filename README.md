@@ -5,7 +5,7 @@
 **현재 PC의 경로에 한글경로가 있어 수정, 저장 등이 원활하지 않아 추후에 다른 PC에서 사용하기 위해 백업 해두기 위한 저장소입니다.**
 **현재까지의 관련 이슈와 체크리스트를 함께 기록합니다.**
 
-+ SingleTon Pattern+ 
++ SingleTon Pattern
 + BITMAP Loading, 2D Animation
 + Component 기반 설계
 + UI 설계
