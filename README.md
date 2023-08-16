@@ -7,11 +7,9 @@
 
 + SingleTon Pattern+ 
 + BITMAP Loading, 2D Animation
-  + (리소스 관리(PathMgr, ResourceMgr, TextureMgr, ...))
 + Component 기반 설계
-  + (Collision : 충돌 시스템, Aimator)
 + UI 설계
-+ TileMap 설계를 위한 Tool(Tool_Scene, Tool 관련 기능 UI)
++ TileMap 설계를 위한 Tool
 
 ---
 
